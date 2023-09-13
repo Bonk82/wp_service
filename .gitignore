@@ -1,0 +1,9 @@
+.env
+node_modules/
+globals.js
+/globals.js
+
+.vscode/*
+.vscode/settings.json
+.wwebjs_auth
+.wwebjs_auth/
