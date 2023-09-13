@@ -7,3 +7,4 @@ globals.js
 .vscode/settings.json
 .wwebjs_auth
 .wwebjs_auth/
+.wwebjs_cache/
