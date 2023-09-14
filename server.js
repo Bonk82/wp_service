@@ -4,7 +4,7 @@ import cors from 'cors'
 import morgan from "morgan";
 
 //ROUTES
-import wpRoutes from './routes/wp.routes.js'
+import serviciosRoutes from './routes/servicios.routes.js'
 
 config();
 const app = express();
@@ -15,7 +15,7 @@ app.use(cors());
 app.use(express.json());
 
 //ROUTES
-app.use(wpRoutes);
+app.use(serviciosRoutes);
 //app.use('/',wpRoutes);
 //app.get('/ver',(req,res)=> res.send('hola'))
 
