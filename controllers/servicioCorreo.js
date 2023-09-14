@@ -1,4 +1,6 @@
-import nm from 'nodemailer'
+import nm from 'nodemailer';
+import * as da from './dataAccess.js'
+
 
 export const enviarCorreo = async (req,res) =>{
   console.log('enviando mail:',req.body);
@@ -17,9 +19,6 @@ export const enviarCorreo = async (req,res) =>{
         ciphers:'SSLv3'
       }
     });
-    // transporter.verify()
-    //            .then(()=>{console.log('Servicio de Correos Activo');})
-    //            .catch(er =>{ console.log('Error servidor correos',er);})
 
     const estado = await transporter.verify();
     console.log('estado de servicio correo',estado);
@@ -40,3 +39,16 @@ export const enviarCorreo = async (req,res) =>{
     res.status(500).json({message: 'Error enviarCorreo, ' + error, data: []});
   }
 }
+
+export const listarUsuarios = async (req,res) =>{
+  console.log('listarUsuarios',req.query);
+  try {
+    const respuesta = await da.obtenerDatos('select * from seguridad.t_usuarios','seguridad');
+    res.status(200).json({message: 'Consulta exitosa!!!', data: respuesta});
+  } catch (error) {
+    console.log('Error listarUsuarios',error);
+    res.status(500).json({message: 'Error consulta: , ' + error, data: []});
+  }
+}
+
+

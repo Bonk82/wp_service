@@ -15,5 +15,7 @@ router.get('/wp/detenerServicioWP',wp.detenerServicioWP);
 /*****correo */
 router.post('/correo/enviarCorreo',correo.enviarCorreo);
 
+/*******data access */
+router.get('/seguridad/listarUsuarios',correo.listarUsuarios);
 
 export default router;

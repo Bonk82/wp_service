@@ -1,12 +1,11 @@
 import express from "express";
-import { config } from "dotenv";
 import cors from 'cors'
 import morgan from "morgan";
+import * as glb from './globals.js'
 
 //ROUTES
 import serviciosRoutes from './routes/servicios.routes.js'
 
-config();
 const app = express();
 
 //MIDDLEWARE
@@ -20,4 +19,4 @@ app.use(serviciosRoutes);
 //app.get('/ver',(req,res)=> res.send('hola'))
 
 //SERVIDOR WEB
-app.listen(process.env.PORT,()=> console.log(`Corriendo en el puerto ${process.env.PORT}`) )
+app.listen(glb.PORT,()=> console.log(`Corriendo en el puerto ${glb.PORT}`) )
