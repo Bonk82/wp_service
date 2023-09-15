@@ -29,7 +29,7 @@ export const obtenerDatos = async (consulta,conexion) =>{
     let pool;
     if(conexion == 'negocio') pool = new postgres.Pool(configNegocio);
     if(conexion == 'seguridad') pool = new postgres.Pool(configSeguridad);
-    console.log('accediendo a datos',consulta,conexion,pool);
+    console.log('accediendo a datos',consulta,conexion);
     try {
       const client = await pool.connect();
       console.log('con conexion',client);
