@@ -1,6 +1,7 @@
 import { Router } from "express";
 import * as wp from '../controllers/servicioWhatsapp.js'
 import * as correo from '../controllers/servicioCorreo.js'
+import * as interop from '../controllers/interopAgetic.js'
 
 const router = Router();
 
@@ -17,5 +18,8 @@ router.post('/correo/enviarCorreo',correo.enviarCorreo);
 
 /*******data access */
 router.get('/seguridad/listarUsuarios',correo.listarUsuarios);
+
+/*******interoperabilidad */
+router.post('/interop/consumirInterop',interop.consumirInterop);
 
 export default router;

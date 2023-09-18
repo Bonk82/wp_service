@@ -32,7 +32,7 @@ export const obtenerDatos = async (consulta,conexion) =>{
     console.log('accediendo a datos',consulta,conexion);
     try {
       const client = await pool.connect();
-      console.log('con conexion',client);
+      //console.log('con conexion',client);
       const data = await client.query(consulta);
       resolve(data);
     } catch (error) {
